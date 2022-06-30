@@ -9,6 +9,7 @@ const int ARR_SIZE = 10;
 const int BIG_SIZE = 1000;
 
 //task 1 functions
+
 template <typename T, typename T2> //show array
 void showArr(T arr[], T2 size)
 {
