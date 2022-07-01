@@ -85,55 +85,22 @@ int main()
     
     //task 4
     
-    int task__two_sort = 0;
+    int task_two_sort = 0;
     int task_four_sort = 0;
     //создаем 10 массивов с рандомными номерами от 0 до 1000
-    int *arr1 = new int[BIG_SIZE];
-    int *arr2 = new int[BIG_SIZE];
-    int* arr3 = new int[BIG_SIZE];
-    int* arr4 = new int[BIG_SIZE];
-    int* arr5 = new int[BIG_SIZE];
-    int* arr6 = new int[BIG_SIZE];
-    int* arr7 = new int[BIG_SIZE];
-    int* arr8 = new int[BIG_SIZE];
-    int* arr9 = new int[BIG_SIZE];
-    int* arr10 = new int[BIG_SIZE];
-    makingArray(arr1, BIG_SIZE);
-    
-    makingArray(arr2, BIG_SIZE);
-    makingArray(arr3, BIG_SIZE);
-    makingArray(arr4, BIG_SIZE);
-    makingArray(arr5, BIG_SIZE);
-    makingArray(arr6, BIG_SIZE);
-    makingArray(arr7, BIG_SIZE);
-    makingArray(arr8, BIG_SIZE);
-    makingArray(arr9, BIG_SIZE);
-    makingArray(arr10, BIG_SIZE);
-    task__two_sort += sortTask2(arr1, BIG_SIZE);
-    task__two_sort += sortTask2(arr2, BIG_SIZE);
-    task__two_sort += sortTask2(arr3, BIG_SIZE);
-    task__two_sort += sortTask2(arr4, BIG_SIZE);
-    task__two_sort += sortTask2(arr5, BIG_SIZE);
-    cout << "Среднее количество перестановок усовершенствованным методом пузырька из второго задания: " << (double)task__two_sort / 5 << endl;
-    task_four_sort += sortTask4(arr6, BIG_SIZE);
-    task_four_sort += sortTask4(arr7, BIG_SIZE);
-    task_four_sort += sortTask4(arr8, BIG_SIZE);
-    task_four_sort += sortTask4(arr9, BIG_SIZE);
-    task_four_sort += sortTask4(arr10, BIG_SIZE);
-    cout << "Среднее количество перестановок методом выбора: " << (double)task_four_sort / 5 << endl;
-
-    //очищаем память
-    delete[] arr1;
-    delete[] arr2;
-    delete[] arr3;
-    delete[] arr4;
-    delete[] arr5;
-    delete[] arr6;
-    delete[] arr7;
-    delete[] arr8;
-    delete[] arr9;
-    delete[] arr10;
-
+    for (int i = 0; i < 10; i++)
+    {
+        int* arr1 = new int[BIG_SIZE];
+        int* arr2 = new int[BIG_SIZE];
+        makingArray(arr1, BIG_SIZE);
+        makingArray(arr2, BIG_SIZE);
+        task_two_sort += sortTask2(arr1, BIG_SIZE);
+        task_four_sort += sortTask4(arr2, BIG_SIZE);
+        delete[] arr1;
+        delete[] arr2;
+    }
+    cout << "Среднее количество перестановок усовершенствованным методом пузырька из второго задания: " << (double)task_two_sort / 10 << endl;
+    cout << "Среднее количество перестановок методом выбора: " << (double)task_four_sort / 10 << endl;
 }
 
 //task 1 functions
